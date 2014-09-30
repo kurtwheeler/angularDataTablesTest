@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="angular-datatables.js"></script>
+    <script src="MyTableController.js"></script>
+  </head>
+  <body ng-controller="MyTableController">
+    <table datatable="ng" id="testy" class="row-border hover">
+      <thead>
+      <tr>
+        <th ng-repeat="col in columns">{{col}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="row in dataToDisplay track by $index">
+        <td ng-repeat="col in row">{{col}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button ng-click="addColumn()">
+      Add Column
+    </button>
+  </body>
+</html>
